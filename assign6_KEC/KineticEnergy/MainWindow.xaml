@@ -1,0 +1,40 @@
+﻿<!--Assignment 6_Group 1
+  Group Members :  1. Oleksandr Rudavka
+                   2. Jonathan Nagata
+                   3. Niral Gandhi
+                   4. Tanmay Teckchandani
+                   5. Priya Tharuman
+                   6. Krishna Kanhaiya
+                   7. Lucas Currah
+ -->
+    <Window x:Class="KineticEnergy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KineticEnergy"
+        mc:Ignorable="d"
+        Title="Kinectic Energy Calculator" Height="350" Width="525" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Kinetic Energy Calculator" FontSize="22" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label Content="Enter Mass (kg): " Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Label>
+        <Label Content="Enter Velocity (m/s): " Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Label>
+        <Label Content="Kinetic Energy (J): " Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding mass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Margin="10 10 10 10" PreviewTextInput="validateTextInput"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding velocity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Margin="10 10 10 10" PreviewTextInput="validateTextInput"></TextBox>
+        <Label Grid.Row="3" Grid.Column="1" Content="{Binding kineticEnergy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Margin="10 10 10 10"></Label>
+        <Button Grid.Row="4" Grid.Column="0" Margin="10" Content="Calculate" FontSize="16" Click="btnCalculate"></Button>
+        <Button Grid.Row="4" Grid.Column="1" Margin="10" Content="Reset" FontSize="16" Click="btnReset"></Button>
+    </Grid>
+</Window>
